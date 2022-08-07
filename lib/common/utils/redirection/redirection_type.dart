@@ -1,0 +1,4 @@
+enum RedirectionType {
+  link,
+  route,
+}
