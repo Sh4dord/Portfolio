@@ -14,7 +14,6 @@ class CustomScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        print(constraints);
         final showDrawer = constraints.maxWidth < 640;
         return Scaffold(
           appBar: NavBarMenu(
