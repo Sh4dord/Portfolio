@@ -12,7 +12,7 @@ build_and_test_web_app:
     paths:
       - build/web
 
-pages: 
+pages:
   stage: deploy
   script:
     - cp -r build/web public
