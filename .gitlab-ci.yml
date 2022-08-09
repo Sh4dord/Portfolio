@@ -3,6 +3,7 @@ build_and_test_web_app:
   image: cirrusci/flutter:stable
   before_script:
     - flutter pub get
+    - flutter  gen-l10n
   script:
     - flutter build web --base-href /portfolio/
     - flutter analyze
@@ -11,7 +12,7 @@ build_and_test_web_app:
     paths:
       - build/web
 
-pages:
+pages: 
   stage: deploy
   script:
     - cp -r build/web public
