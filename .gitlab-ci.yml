@@ -1,4 +1,4 @@
-build_and_test_web_app:
+build:
   stage: build
   image: cirrusci/flutter:stable
   before_script:
@@ -6,12 +6,11 @@ build_and_test_web_app:
     - flutter gen-l10n
   script:
     - flutter build web --base-href /portfolio/
-    - flutter test
   artifacts:
     paths:
       - build/web
 
-pages:
+deploy:
   stage: deploy
   script:
     - cp -r build/web public
