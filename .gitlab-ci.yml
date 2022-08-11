@@ -10,7 +10,7 @@ build:
     paths:
       - build/web
 
-deploy:
+pages:
   stage: deploy
   script:
     - cp -r build/web public
