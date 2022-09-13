@@ -10,12 +10,12 @@ ToolDto _$ToolDtoFromJson(Map<String, dynamic> json) => ToolDto(
       title: json['title'] as String,
       icon: json['icon'] as String,
       url: json['url'] as String,
-      color: json['color'] as String?,
+      category: json['category'] as String?,
     );
 
 Map<String, dynamic> _$ToolDtoToJson(ToolDto instance) => <String, dynamic>{
       'title': instance.title,
       'icon': instance.icon,
-      'color': instance.color,
+      'category': instance.category,
       'url': instance.url,
     };

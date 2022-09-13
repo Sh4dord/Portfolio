@@ -1,13 +1,9 @@
-import 'dart:math';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/common/scaffold/custom_scaffold.dart';
 import 'package:portfolio/common/section/section.dart';
 import 'package:portfolio/features/tools/cubit/tools_cubit.dart';
-import 'package:portfolio/features/tools/widgets/tools_card.widget.dart';
-import 'package:portfolio/infrastructure/tool/entities/tool_entity.dart';
+import 'package:portfolio/features/tools/widgets/tools_selection.widget.dart';
 import 'package:portfolio/theme/theme.dart';
 
 class ToolsPage extends StatelessWidget {
@@ -39,7 +35,7 @@ class ToolsPage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width / 5,
                         child: Form(
                           child: TextField(
-                            onChanged:_cubit.onSearchChanged,
+                            onChanged: _cubit.onSearchChanged,
                             decoration: InputDecoration(
                               hintText: 'Search tool',
                               border: OutlineInputBorder(
@@ -67,14 +63,21 @@ class ToolsPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 5),
                   const Divider(),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: 24),
                   BlocBuilder<ToolsCubit, ToolsState>(
                     bloc: _cubit,
                     builder: (context, state) {
-                      return Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
-                        children: state.filteredTools.map((e) => ToolsCardWidget(tool: e)).toList(),
+                      return Column(
+                        children: state.categories
+                            .map((e) => ToolsSectionWidget(
+                                  tools: state.filteredTools
+                                      .where(
+                                        (element) => element.category == e.name,
+                                      )
+                                      .toList(),
+                                  toolCategoryEntity: e,
+                                ))
+                            .toList(),
                       );
                     },
                   ),

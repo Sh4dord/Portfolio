@@ -13,8 +13,20 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute(HomeModule.moduleRouteName, module: HomeModule()),
-        ModuleRoute(ProjectModule.moduleRouteName, module: ProjectModule()),
-        ModuleRoute(ToolsModule.moduleRouteName, module: ToolsModule()),
+        ModuleRoute(
+          HomeModule.moduleRouteName,
+          module: HomeModule(),
+          transition: TransitionType.fadeIn,
+        ),
+        ModuleRoute(
+          ProjectModule.moduleRouteName,
+          module: ProjectModule(),
+          transition: TransitionType.fadeIn,
+        ),
+        ModuleRoute(
+          ToolsModule.moduleRouteName,
+          module: ToolsModule(),
+          transition: TransitionType.fadeIn,
+        ),
       ];
 }

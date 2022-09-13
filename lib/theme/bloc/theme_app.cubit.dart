@@ -20,6 +20,12 @@ class ThemeAppCubit extends Cubit<ThemeAppState> {
     ));
   }
 
+  void toggleTheme() {
+    emit(state.copyWith(
+      selectedTheme: state.isDarkMode ? ThemeMode.light : ThemeMode.dark,
+    ));
+  }
+
   void setModalPresentation() {
     emit(state.copyWith(
       isShowModalPresentation: true,

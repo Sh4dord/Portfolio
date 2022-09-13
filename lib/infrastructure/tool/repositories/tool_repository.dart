@@ -1,17 +1,17 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:faker/faker.dart';
-import 'package:flutter/material.dart';
 import 'package:portfolio/infrastructure/common/repository_adapter.dart';
+import 'package:portfolio/infrastructure/tool/dtos/tool_category_dto.dart';
 import 'package:portfolio/infrastructure/tool/dtos/tool_dto.dart';
+import 'package:portfolio/infrastructure/tool/entities/tool_category/tool_category_entity.dart';
 import 'package:portfolio/infrastructure/tool/entities/tool_entity.dart';
 
 class ToolRepository extends RepositoryAdapter<ToolEntity> {
-  final _collection = FirebaseFirestore.instance.collection('tools');
+  final _toolsCollection = FirebaseFirestore.instance.collection('tools');
+  final _toolsCategoriesCollection = FirebaseFirestore.instance.collection('tools_categories');
+
   @override
   Future<List<ToolEntity>> findAll() async {
-    final response = await _collection.get();
+    final response = await _toolsCollection.get();
     final result = response.docs.map((e) => ToolDto.fromJson(e.data()));
     return result.map((e) => ToolEntity.fromDto(e)).toList();
   }
@@ -22,4 +22,9 @@ class ToolRepository extends RepositoryAdapter<ToolEntity> {
     throw UnimplementedError();
   }
 
+  Future<List<ToolCategoryEntity>> findCategories() async {
+    final response = await _toolsCategoriesCollection.get();
+    final result = response.docs.map((e) => ToolCategoryDto.fromJson(e.data()));
+    return result.map((e) => ToolCategoryEntity.fromDto(e)).toList();
+  }
 }

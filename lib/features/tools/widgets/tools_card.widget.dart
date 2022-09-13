@@ -1,6 +1,5 @@
 import 'package:favicon/favicon.dart' as fav;
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/infrastructure/tool/entities/tool_entity.dart';
 import 'package:portfolio/theme/common/button_theme/button_theme.utils.dart';
 import 'package:portfolio/theme/common/colors/material_colors.theme.dart';
@@ -15,12 +14,7 @@ class ToolsCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tileColor = tool.color != null
-        ? MaterialStateColors(
-            hoverColor: tool.color!.withOpacity(0.7),
-            stateColor: tool.color!,
-          )
-        : MaterialColors.random[tool.title.hashCode % MaterialColors.random.length];
+    final tileColor = MaterialColors.random[tool.title.hashCode % MaterialColors.random.length];
     return ElevatedButton(
       onPressed: onToolCardTap,
       style: ButtonStyle(
@@ -49,7 +43,6 @@ class ToolsCardWidget extends StatelessWidget {
           FutureBuilder<fav.Icon?>(
             future: fav.Favicon.getBest(tool.url),
             builder: (ctx, data) {
-              print(data.hasError.toString() + ' ' + data.data.toString());
               if(data.hasError || data.data == null) {
                 return const SizedBox.shrink();
               }

@@ -1,2 +1,8 @@
 {
+  "titleGreetingHey": "Salut!",
+  "@titleGreetingHey": {
+    "description": "Titre de la landing page",
+    "type": "text",
+    "placeholders": {}
+  }
 }
