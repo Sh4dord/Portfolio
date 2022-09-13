@@ -5,7 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:portfolio/common/projet_card/project_card.dart';
 import 'package:portfolio/common/section/section.dart';
-import 'package:portfolio/infrastructure/project/project_entity.dart';
+import 'package:portfolio/infrastructure/project/entities/project_entity.dart';
 
 class ProjectSection extends StatelessWidget {
   ProjectSection({Key? key}) : super(key: key);

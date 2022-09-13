@@ -3,9 +3,10 @@ import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:portfolio/common/projet_card/project_card.dart';
 import 'package:portfolio/common/scaffold/custom_scaffold.dart';
 import 'package:portfolio/common/section/section.dart';
-import 'package:portfolio/infrastructure/project/project_entity.dart';
+import 'package:portfolio/infrastructure/project/entities/project_entity.dart';
 
 class ProjectPage extends StatefulWidget {
+  static const String routeName = '/';
   const ProjectPage({
     Key? key,
   }) : super(key: key);
@@ -14,7 +15,8 @@ class ProjectPage extends StatefulWidget {
   State<ProjectPage> createState() => _ProjectPageState();
 }
 
-class _ProjectPageState extends State<ProjectPage> with TickerProviderStateMixin {
+class _ProjectPageState extends State<ProjectPage>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(

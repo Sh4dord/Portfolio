@@ -1,6 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 import 'package:portfolio/features/home/home_module.dart';
+import 'package:portfolio/features/projects/project_module.dart';
+import 'package:portfolio/features/tools/tools_module.dart';
 import 'package:portfolio/theme/bloc/theme_app.cubit.dart';
 
 class AppModule extends Module {
@@ -11,6 +13,8 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute('/', module: HomeModule()),
+        ModuleRoute(HomeModule.moduleRouteName, module: HomeModule()),
+        ModuleRoute(ProjectModule.moduleRouteName, module: ProjectModule()),
+        ModuleRoute(ToolsModule.moduleRouteName, module: ToolsModule()),
       ];
 }

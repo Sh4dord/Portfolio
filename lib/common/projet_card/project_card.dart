@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/common/link_with_icon.dart';
-import 'package:portfolio/infrastructure/project/project_entity.dart';
+import 'package:portfolio/infrastructure/project/entities/project_entity.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({required this.project, Key? key}) : super(key: key);
