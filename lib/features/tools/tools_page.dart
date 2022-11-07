@@ -4,7 +4,7 @@ import 'package:portfolio/common/scaffold/custom_scaffold.dart';
 import 'package:portfolio/common/section/section.dart';
 import 'package:portfolio/features/tools/cubit/tools_cubit.dart';
 import 'package:portfolio/features/tools/widgets/tools_selection.widget.dart';
-import 'package:portfolio/theme/theme.dart';
+import 'package:portfolio/theme/app_theme.dart';
 
 class ToolsPage extends StatelessWidget {
   static const String routeName = '/';

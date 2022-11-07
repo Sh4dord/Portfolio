@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/theme/theme.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({Key? key}) : super(key: key);
@@ -7,7 +6,6 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: colors.background,
       child: Column(
         children: const [
           DrawerHeader(

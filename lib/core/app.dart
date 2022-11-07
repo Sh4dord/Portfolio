@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:portfolio/theme/bloc/theme_app.cubit.dart';
-import 'package:portfolio/theme/bloc/theme_app.state.dart';
-import 'package:portfolio/theme/dark/dark_theme.dart';
-import 'package:portfolio/theme/light/light_theme.dart';
+import 'package:portfolio/theme/app_theme.dart';
+import 'package:portfolio/theme/bloc/theme.cubit.dart';
+import 'package:portfolio/theme/bloc/theme.state.dart';
+import 'package:portfolio/theme/dark/colors/dark_app_colors.dart';
+import 'package:portfolio/theme/light/colors/light_app_colors.dart';
 
 class App extends StatelessWidget {
   static Locale? _deviceLocale;
@@ -15,17 +16,17 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider.value(value: Modular.get<ThemeAppCubit>()),
+        BlocProvider.value(value: Modular.get<ThemeCubit>()),
       ],
-      child: BlocBuilder<ThemeAppCubit, ThemeAppState>(
+      child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, state) {
           return MaterialApp.router(
             title: 'My Smart App',
-            debugShowCheckedModeBanner: false,
+            debugShowCheckedModeBanner: true,
             routeInformationParser: Modular.routeInformationParser,
             routerDelegate: Modular.routerDelegate,
-            darkTheme: darkAppTheme,
-            theme: lightAppTheme,
+            darkTheme: AppTheme.build(colors: DarkAppColors(), brightness: Brightness.dark),
+            theme: AppTheme.build(colors: LightAppColors(), brightness: Brightness.light),
             themeMode: state.theme,
             localeResolutionCallback: (locale, supportedLocales) {
               _deviceLocale = supportedLocales.firstWhere(

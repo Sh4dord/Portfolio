@@ -1,9 +1,9 @@
 import 'package:favicon/favicon.dart' as fav;
 import 'package:flutter/material.dart';
 import 'package:portfolio/infrastructure/tool/entities/tool_entity.dart';
-import 'package:portfolio/theme/common/button_theme/button_theme.utils.dart';
+import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/theme/common/colors/material_colors.theme.dart';
-import 'package:portfolio/theme/theme.dart';
+import 'package:portfolio/theme/utils/theme.utils.dart';
 
 class ToolsCardWidget extends StatelessWidget {
   const ToolsCardWidget({
@@ -18,23 +18,18 @@ class ToolsCardWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: onToolCardTap,
       style: ButtonStyle(
-        padding: ButtonThemeUtils.propertyBuilder(
+        padding: ThemeUtils.materialPropertyBuilder(
           state: const EdgeInsets.symmetric(
             vertical: 20,
             horizontal: 28,
           ),
         ),
-        backgroundColor: ButtonThemeUtils.propertyBuilder(
+        backgroundColor: ThemeUtils.materialPropertyBuilder(
           state: tileColor.stateColor,
           hover: tileColor.hoverColor,
         ),
-        foregroundColor: ButtonThemeUtils.propertyBuilder(
+        foregroundColor: ThemeUtils.materialPropertyBuilder(
           state: tileColor.stateColor.computeLuminance() > 0.5 ? colors.black : colors.white,
-        ),
-        shape: ButtonThemeUtils.propertyBuilder(
-          state: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
         ),
       ),
       child: Row(

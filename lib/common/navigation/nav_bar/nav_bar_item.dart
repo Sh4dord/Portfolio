@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/theme/theme.dart';
+import 'package:portfolio/theme/app_theme.dart';
 
 class NavBarItem extends StatelessWidget {
   const NavBarItem({

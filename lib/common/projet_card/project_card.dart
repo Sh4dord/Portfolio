@@ -10,9 +10,6 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
       elevation: 1,
       child: Column(
         mainAxisSize: MainAxisSize.max,

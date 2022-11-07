@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolio/theme/theme.dart';
+import 'package:portfolio/theme/app_theme.dart';
 
 class NavBarIcon extends StatelessWidget {
   const NavBarIcon({

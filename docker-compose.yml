@@ -1,0 +1,16 @@
+services:
+  synapse:
+    image: matrixdotorg/synapse:latest
+    depends_on:
+      - postgres
+    restart: always
+    volumes:
+      - /data/synapse:/data
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: synapse
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: 5RcP5rLeN8Z2ri48$0#F8Fi@Mt!
+  a

@@ -7,8 +7,8 @@ import 'package:portfolio/common/navigation/navigation_item.dart';
 import 'package:portfolio/features/home/home_module.dart';
 import 'package:portfolio/features/projects/project_module.dart';
 import 'package:portfolio/features/tools/tools_module.dart';
-import 'package:portfolio/theme/bloc/theme_app.cubit.dart';
-import 'package:portfolio/theme/bloc/theme_app.state.dart';
+import 'package:portfolio/theme/bloc/theme.cubit.dart';
+import 'package:portfolio/theme/bloc/theme.state.dart';
 
 class NavBarMenu extends StatelessWidget implements PreferredSizeWidget {
   const NavBarMenu({
@@ -53,12 +53,12 @@ class NavBarMenu extends StatelessWidget implements PreferredSizeWidget {
                   iconPath: 'assets/svg/icons/linkedin_icon.svg',
                   onTap: () => {},
                 ),
-                BlocBuilder<ThemeAppCubit, ThemeAppState>(
-                    bloc: Modular.get<ThemeAppCubit>(),
+                BlocBuilder<ThemeCubit, ThemeState>(
+                    bloc: Modular.get<ThemeCubit>(),
                     builder: (context, state) {
                       return NavBarItem(
                         text: state.isDarkMode ? '🌞' : '🌙',
-                        onTap: Modular.get<ThemeAppCubit>().toggleTheme,
+                        onTap: Modular.get<ThemeCubit>().toggleTheme,
                         fontSize: 18,
                       );
                     }),

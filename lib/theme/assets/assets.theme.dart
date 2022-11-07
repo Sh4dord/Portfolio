@@ -1,13 +1,11 @@
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:portfolio/theme/bloc/theme_app.cubit.dart';
+abstract class AssetsTheme {
+  const AssetsTheme();
 
-part 'assets.mixin.dart';
-part 'lottie_assets.theme.dart';
-part 'png_assets.theme.dart';
-part 'svg_assets.theme.dart';
+  static const String _common = 'assets/img';
 
-class AssetsTheme {
-  final _AssetsLottie lotties = const _AssetsLottie();
-  final _AssetsPng png = const _AssetsPng();
-  final _AssetsSvg svg = const _AssetsSvg();
+  /// *************** SNACKBAR **************** ///
+  static String snackBarSuccessIcon = '$_common/snack_bar/snack_bar_success_icon.svg';
+  static String snackBarErrorIcon = '$_common/snack_bar/snack_bar_error_icon.svg';
+  static String snackBarInfoIcon = '$_common/snack_bar/snack_bar_info_icon.svg';
+  static String snackBarWarningIcon = '$_common/snack_bar/snack_bar_warning_icon.svg';
 }
