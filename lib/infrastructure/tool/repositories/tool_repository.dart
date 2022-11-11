@@ -1,8 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:portfolio/infrastructure/common/repository_adapter.dart';
-import 'package:portfolio/infrastructure/tool/dtos/tool_category_dto.dart';
-import 'package:portfolio/infrastructure/tool/dtos/tool_dto.dart';
-import 'package:portfolio/infrastructure/tool/entities/tool_category/tool_category_entity.dart';
 import 'package:portfolio/infrastructure/tool/entities/tool_entity.dart';
 
 class ToolRepository extends RepositoryAdapter<ToolEntity> {
@@ -10,10 +7,9 @@ class ToolRepository extends RepositoryAdapter<ToolEntity> {
   final _toolsCategoriesCollection = FirebaseFirestore.instance.collection('tools_categories');
 
   @override
-  Future<List<ToolEntity>> findAll() async {
-    final response = await _toolsCollection.get();
-    final result = response.docs.map((e) => ToolDto.fromJson(e.data()));
-    return result.map((e) => ToolEntity.fromDto(e)).toList();
+  Future<List<ToolEntity>> findAll() {
+    // TODO: implement findAll
+    throw UnimplementedError();
   }
 
   @override
@@ -22,9 +18,15 @@ class ToolRepository extends RepositoryAdapter<ToolEntity> {
     throw UnimplementedError();
   }
 
-  Future<List<ToolCategoryEntity>> findCategories() async {
-    final response = await _toolsCategoriesCollection.get();
-    final result = response.docs.map((e) => ToolCategoryDto.fromJson(e.data()));
-    return result.map((e) => ToolCategoryEntity.fromDto(e)).toList();
+  @override
+  Future<bool> insertAll(List<ToolEntity> entities) {
+    // TODO: implement insertAll
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool> insertOne(ToolEntity entity) {
+    // TODO: implement insertOne
+    throw UnimplementedError();
   }
 }

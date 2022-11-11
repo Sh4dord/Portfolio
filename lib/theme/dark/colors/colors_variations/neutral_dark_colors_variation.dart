@@ -5,10 +5,10 @@ class _DarkNeutralVariations extends ColorsVariationInterface {
   Color get v0 => const Color(0xFF000014);
 
   @override
-  Color get v10 => const Color(0xFF141423);
+  Color get v10 => const Color(0xFF191919);
 
   @override
-  Color get v20 => const Color(0xFF323241);
+  Color get v20 => const Color(0xFF363636);
 
   @override
   Color get v30 => const Color(0xFF555564);

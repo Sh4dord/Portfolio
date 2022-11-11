@@ -5,8 +5,8 @@ import 'package:portfolio/common/navigation/nav_bar/nav_bar_icon.dart';
 import 'package:portfolio/common/navigation/nav_bar/nav_bar_item.dart';
 import 'package:portfolio/common/navigation/navigation_item.dart';
 import 'package:portfolio/features/home/home_module.dart';
-import 'package:portfolio/features/projects/project_module.dart';
-import 'package:portfolio/features/tools/tools_module.dart';
+import 'package:portfolio/features/project/project_module.dart';
+import 'package:portfolio/features/tool/tool_module.dart';
 import 'package:portfolio/theme/bloc/theme.cubit.dart';
 import 'package:portfolio/theme/bloc/theme.state.dart';
 

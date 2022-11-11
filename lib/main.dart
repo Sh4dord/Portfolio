@@ -7,6 +7,7 @@ import 'package:portfolio/core/app_module.dart';
 
 Future<void> main() async {
   setUrlStrategy(PathUrlStrategy());
+
   await Firebase.initializeApp(
     options: const FirebaseOptions(
       apiKey: String.fromEnvironment('FIREBASE_API_KEY'),

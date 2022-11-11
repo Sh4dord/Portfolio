@@ -6,25 +6,26 @@ import 'package:portfolio/theme/common/colors/shimmer_colors_interface.dart';
 
 /// --- BUTTONS --- ///
 part 'button_colors/elevated_dark_button_colors.dart';
-
 part 'button_colors/outlined_dark_button_colors.dart';
-
 part 'colors_variations/danger_dark_colors_variation.dart';
-
 part 'colors_variations/info_dark_colors_variation.dart';
-
 part 'colors_variations/neutral_dark_colors_variation.dart';
-
 part 'colors_variations/primary_dark_colors_variation.dart';
-
 part 'colors_variations/shimmer_colors.theme.dart';
-
 /// --- VARIATIONS --- ///
 part 'colors_variations/success_dark_colors_variation.dart';
+
+part 'colors_variations/text_dark_colors_variation.dart';
 
 part 'colors_variations/warning_dark_colors_variation.dart';
 
 class DarkAppColors extends AppColorsInterface {
+  @override
+  Color get background => const Color(0xFF191919);
+
+  @override
+  Color get card => const Color(0xFF363636);
+
   /// --- VARIATIONS --- ///
   @override
   final ColorsVariationInterface primary = _DarkPrimaryVariations();
@@ -38,6 +39,8 @@ class DarkAppColors extends AppColorsInterface {
   final ColorsVariationInterface success = _DarkSuccessVariations();
   @override
   final ColorsVariationInterface neutral = _DarkNeutralVariations();
+  @override
+  final ColorsVariationInterface text = _DarkTextColorsVariation();
 
   /// --- BUTTONS --- ///
   @override

@@ -1,6 +1,6 @@
 part of '../app_theme.dart';
 
-abstract class ButtonAppTheme {
+abstract class _ButtonAppTheme {
   static ElevatedButtonThemeData elevated({
     required ButtonColorsInterface buttonColors,
   }) {
@@ -91,6 +91,7 @@ abstract class ButtonAppTheme {
           fontSize: 16 * 0.7,
           fontWeight: FontWeight.w400,
           height: 1.2,
+          decoration: TextDecoration.underline,
           color: buttonColors.text,
         )),
       ),

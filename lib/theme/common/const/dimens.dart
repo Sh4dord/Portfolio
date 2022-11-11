@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 
 abstract class Dimens {
   static const double spacing0 = 0;
+  static const double spacing2 = 2;
   static const double spacing4 = 4;
+  static const double spacing6 = 6;
   static const double spacing8 = 8;
   static const double spacing16 = 16;
   static const double spacing24 = 24;
   static const double spacing32 = 32;
+  static const double spacing48 = 48;
   static const double spacing64 = 64;
 
   static const double radius2 = 2;

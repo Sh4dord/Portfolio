@@ -1,34 +1,31 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/infrastructure/tool/dtos/tool_dto.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:portfolio/infrastructure/tool/entities/tool_category/tool_category_name_enum.dart';
-import 'package:portfolio/utils/enum_utils.dart';
 
+part 'tool_entity.g.dart';
+
+@JsonSerializable()
 class ToolEntity extends Equatable {
   final String title;
-  final IconData icon;
+
+  @JsonKey(name: 'icon')
+  final String rawIcon;
   final ToolCategoryName category;
   final String url;
 
   const ToolEntity({
     required this.title,
-    required this.icon,
+    required this.rawIcon,
     required this.url,
     this.category = ToolCategoryName.UNKNOWN,
   });
 
-  factory ToolEntity.fromDto(ToolDto dto) {
-    return ToolEntity(
-      title: dto.title,
-      icon: IconData(
-        int.parse(dto.icon),
+  IconData get icon => IconData(
+        int.parse(rawIcon),
         fontFamily: 'FontAwesomeBrands',
         fontPackage: 'font_awesome_flutter',
-      ),
-      category: EnumUtils.stringToEnum(dto.category, ToolCategoryName.values) ?? ToolCategoryName.UNKNOWN,
-      url: dto.url,
-    );
-  }
+      );
 
   @override
   String toString() {

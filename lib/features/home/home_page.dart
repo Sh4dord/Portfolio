@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/common/scaffold/custom_scaffold.dart';
-import 'package:portfolio/features/projects/widgets/project_section.dart';
+import 'package:portfolio/features/home/widgets/intro_widget.dart';
+import 'package:portfolio/features/project/widgets/project_section_widget.dart';
+import 'package:portfolio/features/stack/widgets/stack_section_widget.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = '/';
+
   const HomePage({
     Key? key,
   }) : super(key: key);
@@ -17,8 +20,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return CustomScaffold(
       body: Column(
-        children: [
-          ProjectSection(),
+        children: const [
+          IntroWidget(),
+          StacksSectionWidget(),
+          ProjectSectionWidget(),
         ],
       ),
     );

@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:portfolio/theme/common/colors/app_colors_interface.dart';
+part of '../app_theme.dart';
 
-abstract class TextAppTheme {
+abstract class _TextAppTheme {
   static TextTheme build({required AppColorsInterface colors}) {
     return TextTheme(
       // Big title
@@ -9,7 +8,7 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 58 * 0.7,
         fontWeight: FontWeight.w700,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
         letterSpacing: -1,
       ),
       // SectionTitle
@@ -17,14 +16,14 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 48 * 0.7,
         fontWeight: FontWeight.w700,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
       // About Title
       headline3: TextStyle(
         fontFamily: 'Poppins',
         fontSize: 42 * 0.7,
         fontWeight: FontWeight.w700,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
         letterSpacing: -0.4,
       ),
       // Section Subtitle
@@ -32,7 +31,7 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 32 * 0.7,
         fontWeight: FontWeight.w400,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
 
       // Project Card Title
@@ -40,7 +39,7 @@ abstract class TextAppTheme {
         fontFamily: 'DMSans',
         fontSize: 28 * 0.7,
         fontWeight: FontWeight.w500,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
 
       // Nav Button
@@ -48,7 +47,7 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 20 * 0.7,
         fontWeight: FontWeight.w500,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
 
       // Main Text
@@ -56,14 +55,15 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 18 * 0.7,
         fontWeight: FontWeight.w400,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
       // Main Text 2
       bodyText2: TextStyle(
         fontFamily: 'Poppins',
         fontSize: 18 * 0.7,
-        fontWeight: FontWeight.w300,
-        color: colors.neutral.v100,
+        fontWeight: FontWeight.w100,
+        fontStyle: FontStyle.normal,
+        color: colors.text.v100,
       ),
 
       // Tech Stack Title
@@ -71,14 +71,14 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 16 * 0.7,
         fontWeight: FontWeight.w400,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
       // Tech Stack
       subtitle2: TextStyle(
         fontFamily: 'Poppins',
         fontSize: 14 * 0.7,
-        fontWeight: FontWeight.w300,
-        color: colors.neutral.v100,
+        fontWeight: FontWeight.w100,
+        color: colors.text.v100,
       ),
 
       //button bottom pages
@@ -86,7 +86,7 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 16 * 0.7,
         fontWeight: FontWeight.w400,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
 
       // Not used now
@@ -94,7 +94,7 @@ abstract class TextAppTheme {
         fontFamily: 'Poppins',
         fontSize: 12 * 0.7,
         fontWeight: FontWeight.normal,
-        color: colors.neutral.v100,
+        color: colors.text.v100,
       ),
     );
   }

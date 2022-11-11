@@ -4,12 +4,15 @@ import 'package:portfolio/theme/bloc/theme.cubit.dart';
 import 'package:portfolio/theme/common/colors/app_colors_interface.dart';
 import 'package:portfolio/theme/common/colors/button_colors_interface.dart';
 import 'package:portfolio/theme/common/const/dimens.dart';
-import 'package:portfolio/theme/common/text_app_theme.dart';
 import 'package:portfolio/theme/dark/colors/dark_app_colors.dart';
 import 'package:portfolio/theme/light/colors/light_app_colors.dart';
 import 'package:portfolio/theme/utils/theme.utils.dart';
 
 part 'common/button_app_theme.dart';
+
+part 'common/chip_app_theme.dart';
+
+part 'common/text_app_theme.dart';
 
 AppColorsInterface get colors => Modular.get<ThemeCubit>().state.isDarkMode ? DarkAppColors() : LightAppColors();
 
@@ -25,17 +28,20 @@ abstract class AppTheme {
       ),
       brightness: brightness,
       dividerColor: colors.neutral.v40,
-      scaffoldBackgroundColor: colors.neutral.v10,
-      backgroundColor: colors.neutral.v10,
+      scaffoldBackgroundColor: colors.background,
+      backgroundColor: colors.background,
       canvasColor: Colors.transparent,
 
       /// ---- TEXTS ---- ///
-      fontFamily: 'Poppins',
-      textTheme: TextAppTheme.build(colors: colors),
+      fontFamily: 'DM Sans',
+      textTheme: _TextAppTheme.build(colors: colors),
+
+      /// ---- CHIP ---- ///
+      chipTheme: _ChipAppTheme.build(colors: colors),
 
       /// ---- CARDS ---- ///
       cardTheme: CardTheme(
-        color: colors.neutral.v0,
+        color: colors.card,
         elevation: 4,
         clipBehavior: Clip.antiAlias,
         margin: EdgeInsets.zero,
@@ -45,9 +51,9 @@ abstract class AppTheme {
       ),
 
       /// ---- BUTTONS ---- ///
-      elevatedButtonTheme: ButtonAppTheme.elevated(buttonColors: colors.elevatedButton),
-      outlinedButtonTheme: ButtonAppTheme.outlined(buttonColors: colors.outlinedButton),
-      textButtonTheme: ButtonAppTheme.text(buttonColors: colors.textButton),
+      elevatedButtonTheme: _ButtonAppTheme.elevated(buttonColors: colors.elevatedButton),
+      outlinedButtonTheme: _ButtonAppTheme.outlined(buttonColors: colors.outlinedButton),
+      textButtonTheme: _ButtonAppTheme.text(buttonColors: colors.textButton),
 
       /// ---- BUTTONS EFFECTS ---- ///
       focusColor: colors.primary.v100,

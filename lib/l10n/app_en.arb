@@ -6,5 +6,11 @@
   "navBarContact": "Contact",
   "projectSectionTitle": "Projects",
   "projectSectionSubtitle": "Thinks I've built so far",
+  "stackSectionTitle": "My Tech Stack",
+  "stackSectionSubtitle": "Technologies I've used recently",
+  "homeWelcome1": "Hi ,",
+  "homeWelcome2": "My name is",
+  "homeWelcome3": "Nathan Rolando",
+  "homeWelcome4": "I build Flutter Apps",
   "eof": "***** END OF FILE NEVER DELETE THIS LINE *****"
 }
