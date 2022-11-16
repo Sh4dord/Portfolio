@@ -1,6 +1,6 @@
 # portfolio
 
-A new Flutter Huge project.
+A new Flutter Huge marvelous project.
 
 ## Getting Started
 
