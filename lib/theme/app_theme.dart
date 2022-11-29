@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/theme/bloc/theme.cubit.dart';
 import 'package:portfolio/theme/common/colors/app_colors_interface.dart';
 import 'package:portfolio/theme/common/colors/button_colors_interface.dart';
 import 'package:portfolio/theme/common/const/dimens.dart';
+import 'package:portfolio/theme/common/gradients/app_gradients_interface.dart';
 import 'package:portfolio/theme/dark/colors/dark_app_colors.dart';
+import 'package:portfolio/theme/dark/gradients/dark_app_gradients.dart';
 import 'package:portfolio/theme/light/colors/light_app_colors.dart';
+import 'package:portfolio/theme/light/gradients/light_app_gradients.dart';
 import 'package:portfolio/theme/utils/theme.utils.dart';
 
 part 'common/button_app_theme.dart';
-
 part 'common/chip_app_theme.dart';
-
 part 'common/text_app_theme.dart';
 
 AppColorsInterface get colors => Modular.get<ThemeCubit>().state.isDarkMode ? DarkAppColors() : LightAppColors();
+AppGradientsInterface get gradients =>
+    Modular.get<ThemeCubit>().state.isDarkMode ? DarkAppGradients() : LightAppGradients();
 
 abstract class AppTheme {
   static ThemeData build({required AppColorsInterface colors, required Brightness brightness}) {

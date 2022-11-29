@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/theme/app_theme.dart';
 import 'package:portfolio/theme/bloc/theme.cubit.dart';
 import 'package:portfolio/theme/bloc/theme.state.dart';
@@ -14,43 +15,47 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider.value(value: Modular.get<ThemeCubit>()),
-      ],
-      child: BlocBuilder<ThemeCubit, ThemeState>(
-        builder: (context, state) {
-          return MaterialApp.router(
-            title: 'My Smart App',
-            debugShowCheckedModeBanner: true,
-            routeInformationParser: Modular.routeInformationParser,
-            routerDelegate: Modular.routerDelegate,
-            darkTheme: AppTheme.build(colors: DarkAppColors(), brightness: Brightness.dark),
-            theme: AppTheme.build(colors: LightAppColors(), brightness: Brightness.light),
-            themeMode: state.theme,
-            localeResolutionCallback: (locale, supportedLocales) {
-              _deviceLocale = supportedLocales.firstWhere(
-                  (supportedLocale) =>
-                      supportedLocale.languageCode == locale!.languageCode ||
-                      supportedLocale.countryCode == locale.countryCode,
-                  orElse: () => supportedLocales.first);
-              return _deviceLocale;
-            },
-            locale: _deviceLocale,
-            localizationsDelegates: const [
-              ...AppLocalizations.localizationsDelegates,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
+    return ScreenUtilInit(
+        designSize: const Size(1660, 3630),
+        builder: (context, child) {
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider.value(value: Modular.get<ThemeCubit>()),
             ],
-            supportedLocales: const [
-              Locale('fr', 'FR'),
-              Locale('en', 'GB'),
-              // const Locale('en', 'US'),
-            ],
+            child: BlocBuilder<ThemeCubit, ThemeState>(
+              builder: (context, state) {
+                return MaterialApp.router(
+                  title: 'My Smart App',
+                  debugShowCheckedModeBanner: true,
+                  routeInformationParser: Modular.routeInformationParser,
+                  routerDelegate: Modular.routerDelegate,
+                  darkTheme: AppTheme.build(colors: DarkAppColors(), brightness: Brightness.dark),
+                  theme: AppTheme.build(colors: LightAppColors(), brightness: Brightness.light),
+                  themeMode: state.theme,
+                  localeResolutionCallback: (locale, supportedLocales) {
+                    _deviceLocale = supportedLocales.firstWhere(
+                        (supportedLocale) =>
+                            supportedLocale.languageCode == locale!.languageCode ||
+                            supportedLocale.countryCode == locale.countryCode,
+                        orElse: () => supportedLocales.first);
+                    return _deviceLocale;
+                  },
+                  locale: _deviceLocale,
+                  localizationsDelegates: const [
+                    ...AppLocalizations.localizationsDelegates,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: const [
+                    Locale('fr', 'FR'),
+                    Locale('en', 'GB'),
+                    // const Locale('en', 'US'),
+                  ],
+                );
+              },
+            ),
           );
-        },
-      ),
-    ); //added by extension
+        }); //added by extension
   }
 }

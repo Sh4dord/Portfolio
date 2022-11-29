@@ -1,9 +1,11 @@
 abstract class AssetsTheme {
-  const AssetsTheme();
-
   static const String _common = 'assets';
   static const String _commonSvg = '$_common/svg';
   static const String _commonPng = '$_common/png';
+  static const String _commonJpg = '$_common/jpg';
+
+  /// *************** PROFILE **************** ///
+  static String profilePicture = '$_commonJpg/profile_picture.jpg';
 
   /// *************** SNACKBAR **************** ///
   static String snackBarSuccessIcon = '$_commonSvg/snack_bar/snack_bar_success_icon.svg';

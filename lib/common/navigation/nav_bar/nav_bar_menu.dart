@@ -7,6 +7,7 @@ import 'package:portfolio/common/navigation/navigation_item.dart';
 import 'package:portfolio/features/home/home_module.dart';
 import 'package:portfolio/features/project/project_module.dart';
 import 'package:portfolio/features/tool/tool_module.dart';
+import 'package:portfolio/theme/assets/assets.theme.dart';
 import 'package:portfolio/theme/bloc/theme.cubit.dart';
 import 'package:portfolio/theme/bloc/theme.state.dart';
 
@@ -42,15 +43,15 @@ class NavBarMenu extends StatelessWidget implements PreferredSizeWidget {
                   onTap: () => Modular.to.pushReplacementNamed(ToolsModule.moduleRouteName),
                 ),
                 NavBarIcon(
-                  iconPath: 'assets/svg/icons/github_icon.svg',
+                  iconPath: AssetsTheme.github,
                   onTap: () => {},
                 ),
                 NavBarIcon(
-                  iconPath: 'assets/svg/icons/twitter_icon.svg',
+                  iconPath: AssetsTheme.twitter,
                   onTap: () => {},
                 ),
                 NavBarIcon(
-                  iconPath: 'assets/svg/icons/linkedin_icon.svg',
+                  iconPath: AssetsTheme.linkedin,
                   onTap: () => {},
                 ),
                 BlocBuilder<ThemeCubit, ThemeState>(

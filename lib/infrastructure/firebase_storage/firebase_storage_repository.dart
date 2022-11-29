@@ -8,7 +8,6 @@ class FirebaseStorageRepository {
   Future<String> getDocument(String path) async {
     final imagesRef = storage.ref(path);
     final url = await imagesRef.getDownloadURL();
-    final uri = Uri.parse(url);
     return url;
   }
 }

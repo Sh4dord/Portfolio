@@ -3,12 +3,16 @@ import 'package:portfolio/infrastructure/common/repository_adapter.dart';
 import 'package:portfolio/infrastructure/project/entities/project_entity.dart';
 
 class ProjectRepository extends RepositoryAdapter<ProjectEntity> {
-  final _projectCollection = FirebaseFirestore.instance.collection('projects');
+  final _projectCollection = FirebaseFirestore.instance.collection('proects');
 
   @override
   Future<List<ProjectEntity>> findAll() async {
-    final response = await _projectCollection.get();
-    return response.docs.map((e) => ProjectEntity.fromJson(e.data())).toList();
+    try {
+      final response = await _projectCollection.get();
+      return response.docs.map((e) => ProjectEntity.fromJson(e.data())).toList();
+    } catch (e) {
+      throw Exception();
+    }
   }
 
   @override

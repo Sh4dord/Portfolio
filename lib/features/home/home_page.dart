@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/common/scaffold/custom_scaffold.dart';
-import 'package:portfolio/features/home/widgets/intro_widget.dart';
+import 'package:portfolio/features/home/widgets/intro/intro_widget.dart';
 import 'package:portfolio/features/project/widgets/project_section_widget.dart';
 import 'package:portfolio/features/stack/widgets/stack_section_widget.dart';
 

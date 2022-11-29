@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:portfolio/infrastructure/project/entities/project_entity.dart';
 import 'package:portfolio/infrastructure/project/repositories/project_repository.dart';
@@ -15,6 +16,8 @@ class ProjectCubit extends Cubit<ProjectState> {
     try {
       final result = await _projectRepository.findAll();
       emit(state.copyWith(projects: result));
-    } catch (e) {}
+    } catch (e) {
+      debugPrint(e.toString());
+    }
   }
 }

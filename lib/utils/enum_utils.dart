@@ -3,7 +3,7 @@ class EnumUtils {
     return enumValue.toString().split('.')[1];
   }
 
-  static U? stringToEnum<U>(String? stringValue, List<U> enumValues) {
+  static U? stringToEnum<U extends Enum>(String? stringValue, List<U> enumValues) {
     if (stringValue == null || stringValue.isEmpty) {
       return null;
     }

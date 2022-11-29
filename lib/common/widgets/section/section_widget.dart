@@ -18,11 +18,13 @@ class SectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: Dimens.spacing32,
+        horizontal: Dimens.spacing64,
         vertical: Dimens.spacing8,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           if (title != null || subtitle != null) ...[
             SectionTextsWidget(

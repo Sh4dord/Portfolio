@@ -3,41 +3,42 @@ part of '../app_theme.dart';
 abstract class _TextAppTheme {
   static TextTheme build({required AppColorsInterface colors}) {
     return TextTheme(
-      // Big title
+      // OK
       headline1: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 58 * 0.7,
+        fontSize: 58.sp,
         fontWeight: FontWeight.w700,
         color: colors.text.v100,
         letterSpacing: -1,
       ),
-      // SectionTitle
+      // OK
       headline2: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 48 * 0.7,
+        fontSize: 48.sp,
         fontWeight: FontWeight.w700,
         color: colors.text.v100,
+        height: 1.3,
       ),
       // About Title
       headline3: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 42 * 0.7,
+        fontSize: 42.sp,
         fontWeight: FontWeight.w700,
         color: colors.text.v100,
         letterSpacing: -0.4,
       ),
-      // Section Subtitle
+      // OK
       headline4: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 32 * 0.7,
+        fontSize: 32.sp,
         fontWeight: FontWeight.w400,
         color: colors.text.v100,
       ),
 
-      // Project Card Title
+      // OK Project Card Title
       headline5: TextStyle(
-        fontFamily: 'DMSans',
-        fontSize: 28 * 0.7,
+        fontFamily: 'Poppins',
+        fontSize: 28,
         fontWeight: FontWeight.w500,
         color: colors.text.v100,
       ),
@@ -45,54 +46,54 @@ abstract class _TextAppTheme {
       // Nav Button
       headline6: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 20 * 0.7,
+        fontSize: 20.sp,
         fontWeight: FontWeight.w500,
         color: colors.text.v100,
       ),
 
-      // Main Text
+      // OK Project Card Desc
       bodyText1: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 18 * 0.7,
+        fontSize: 18,
         fontWeight: FontWeight.w400,
         color: colors.text.v100,
       ),
       // Main Text 2
       bodyText2: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 18 * 0.7,
+        fontSize: 18,
         fontWeight: FontWeight.w100,
         fontStyle: FontStyle.normal,
         color: colors.text.v100,
       ),
 
-      // Tech Stack Title
+      // OK Tech Stack Title
       subtitle1: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 16 * 0.7,
+        fontSize: 16.sp,
         fontWeight: FontWeight.w400,
         color: colors.text.v100,
       ),
-      // Tech Stack
+      // OK Tech Stack
       subtitle2: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 14 * 0.7,
+        fontSize: 14.sp,
         fontWeight: FontWeight.w100,
         color: colors.text.v100,
       ),
 
-      //button bottom pages
+      // OK Nav
       button: TextStyle(
-        fontFamily: 'Poppins',
-        fontSize: 16 * 0.7,
-        fontWeight: FontWeight.w400,
+        fontFamily: 'DM Sans',
+        fontSize: 20.sp,
+        fontWeight: FontWeight.w500,
         color: colors.text.v100,
       ),
 
       // Not used now
       caption: TextStyle(
         fontFamily: 'Poppins',
-        fontSize: 12 * 0.7,
+        fontSize: 12.sp,
         fontWeight: FontWeight.normal,
         color: colors.text.v100,
       ),
